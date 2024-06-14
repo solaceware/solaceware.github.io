@@ -1,26 +1,63 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ReactTyped } from 'react-typed';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const blogPosts = [
+    {
+      title: 'First Blog Post',
+      content: 'This is the content of the first blog post.'
+    },
+    {
+      title: 'Second Blog Post',
+      content: 'This is the content of the second blog post.'
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="landing-page">
+      <header className="header">
+        <nav className="navbar">
+          <div className="logo">solaceware</div>
+          <ul className="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
       </header>
+
+      <main className="main">
+        <h1 className="glitch">solaceware</h1>
+        <section className="hero glass">
+          <div className="hero-content">
+            <div className="typing-wrapper">
+              <ReactTyped
+                strings={['Java', 'Lua', 'Rust', 'Go']}
+                typeSpeed={60}
+                backSpeed={50}
+                loop
+              />
+            </div>
+            <button className="cta-btn">Get Started</button>
+          </div>
+        </section>
+
+        <section className="blog glass">
+          <h2>Blog</h2>
+          {blogPosts.map((post, index) => (
+            <div key={index} className="blog-post">
+              <h3>{post.title}</h3>
+              <p>{post.content}</p>
+            </div>
+          ))}
+        </section>
+      </main>
+
+      <footer className="footer">
+        <p>&copy; 2023 Your Landing Page. All rights reserved.</p>
+      </footer>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,38 +1,276 @@
-.App {
-  text-align: center;
-}
+/* Reset and Base Styles */
+/* ... */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Layout Styles */
+.landing-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh; /* Set a fixed height */
+  max-width: calc(100vh * 4 / 3); /* Calculate the width based on the 4:3 aspect ratio */
+  margin: 0 auto; /* Center the landing page horizontally */
+  background-color: #333;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative; /* Ensure proper layering */
+  z-index: 0; /* Ensure it is above the background gradient */
 }
 
-.App-link {
-  color: #61dafb;
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000066 25%, 50%, #6699ff);
+  z-index: -1; /* Place it behind the content */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header {
+  background-color: #222;
+  box-shadow: none;
+  border-bottom: 1px solid #444;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal;
+}
+
+.main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background-color: #666;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.features {
+  margin-bottom: 4rem;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: #444;
+  padding: 1rem;
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+.feature-card img {
+  max-width: 100px;
+  margin-bottom: 1rem;
+  filter: grayscale(100%);
+}
+
+.blog {
+  margin-bottom: 4rem;
+}
+
+.blog-post {
+  background-color: #444;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.blog-post h3 {
+  margin-top: 0;
+}
+
+.blog-post p {
+  margin-bottom: 0;
+}
+
+.footer {
+  background-color: #222;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #444;
+}
+
+/* Glitch Effect Styles */
+.glitch {
+  position: relative;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 1; /* Ensure it is above the background gradient */
+  animation: glitch-animation 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: "solaceware";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-before 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-after 2s infinite linear alternate-reverse;
+}
+
+/* Add this to your existing App.css */
+
+/* Typing Effect Styles */
+.typing-wrapper {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  z-index: 1; /* Ensure it is above the background gradient */
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@keyframes glitch-animation {
+  0%, 100% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10%, 30%, 50% {
+    clip: rect(85px, 550px, 140px, 0);
+  }
+  20%, 40%, 60% {
+    clip: rect(24px, 550px, 90px, 0);
+  }
+  70%, 90% {
+    clip: rect(15px, 9999px, 55px, 0);
+  }
+  80% {
+    clip: rect(30px, 550px, 70px, 0);
+  }
+}
+
+@keyframes glitch-before {
+  0%, 100% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10%, 30%, 50% {
+    clip: rect(55px, 550px, 100px, 0);
+  }
+  20%, 40%, 60% {
+    clip: rect(10px, 550px, 50px, 0);
+  }
+  70%, 90% {
+    clip: rect(20px, 9999px, 65px, 0);
+  }
+  80% {
+    clip: rect(35px, 550px, 85px, 0);
+  }
+}
+
+@keyframes glitch-after {
+  0%, 100% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10%, 30%, 50% {
+    clip: rect(45px, 550px, 80px, 0);
+  }
+  20%, 40%, 60% {
+    clip: rect(35px, 550px, 75px, 0);
+  }
+  70%, 90% {
+    clip: rect(25px, 9999px, 95px, 0);
+  }
+  80% {
+    clip: rect(50px, 550px, 90px, 0);
+  }
+}
+
+/* Glass-like Blur Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
   }
 }
