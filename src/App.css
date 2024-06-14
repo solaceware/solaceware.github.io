@@ -3,7 +3,7 @@
 
 /* Layout Styles */
 .landing-page {
-  display: flex;
+  display: flex; /* o*/
   flex-direction: column;
   height: 100vh; /* Set a fixed height */
   max-width: calc(100vh * 4 / 3); /* Calculate the width based on the 4:3 aspect ratio */
