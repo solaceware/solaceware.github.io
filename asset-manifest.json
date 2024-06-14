@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/solace/static/css/main.ea144561.css",
-    "main.js": "/solace/static/js/main.5c8b42b1.js",
-    "static/js/453.6d86c379.chunk.js": "/solace/static/js/453.6d86c379.chunk.js",
-    "index.html": "/solace/index.html",
-    "main.ea144561.css.map": "/solace/static/css/main.ea144561.css.map",
-    "main.5c8b42b1.js.map": "/solace/static/js/main.5c8b42b1.js.map",
-    "453.6d86c379.chunk.js.map": "/solace/static/js/453.6d86c379.chunk.js.map"
+    "main.css": "/static/css/main.ea144561.css",
+    "main.js": "/static/js/main.16570861.js",
+    "static/js/453.6d86c379.chunk.js": "/static/js/453.6d86c379.chunk.js",
+    "index.html": "/index.html",
+    "main.ea144561.css.map": "/static/css/main.ea144561.css.map",
+    "main.16570861.js.map": "/static/js/main.16570861.js.map",
+    "453.6d86c379.chunk.js.map": "/static/js/453.6d86c379.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ea144561.css",
-    "static/js/main.5c8b42b1.js"
+    "static/js/main.16570861.js"
   ]
 }
