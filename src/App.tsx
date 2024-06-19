@@ -15,6 +15,7 @@ const App: React.FC = () => {
   ];
 
   return (
+    
     <div className="landing-page">
       <header className="header">
         <nav className="navbar">
@@ -27,7 +28,7 @@ const App: React.FC = () => {
       </header>
 
       <main className="main">
-        <h1 className="glitch">solaceware</h1>
+        <h1 className="no-glitch">solaceware</h1>
         <section className="hero glass">
           <div className="hero-content">
             <div className="typing-wrapper">
@@ -54,7 +55,7 @@ const App: React.FC = () => {
       </main>
 
       <footer className="footer">
-        <p>&copy; 2023 Your Landing Page. All rights reserved.</p>
+        <p>&copy; 2023 solaceware.</p>
       </footer>
     </div>
   );

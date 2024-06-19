@@ -3,16 +3,28 @@
 
 /* Layout Styles */
 .landing-page {
-  display: flex; /* o*/
+  display: flex;
   flex-direction: column;
-  height: 100vh; /* Set a fixed height */
-  max-width: calc(100vh * 4 / 3); /* Calculate the width based on the 4:3 aspect ratio */
-  margin: 0 auto; /* Center the landing page horizontally */
+  height: 100vh;
+  max-width: calc(100vh * 4 / 3);
+  margin: 0 auto;
   background-color: #333;
   color: #fff;
   font-family: 'Courier New', Courier, monospace;
-  position: relative; /* Ensure proper layering */
-  z-index: 0; /* Ensure it is above the background gradient */
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .landing-page::before {
@@ -22,9 +34,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #000066, #6699ff);
-  z-index: -1; /* Place it behind the content */
+  background-image: linear-gradient(to bottom, #9bb5d2 0%, #e7f0fd 100%);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  z-index: -2;
 }
+
 
 .header {
   background-color: #222;
@@ -135,51 +150,21 @@
   border-top: 1px solid #444;
 }
 
-/* Glitch Effect Styles */
-.glitch {
-  position: relative;
-  color: #fff;
+/* Removed Glitch Effect Styles */
+.no-glitch {
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
   margin-top: 2rem;
-  z-index: 1; /* Ensure it is above the background gradient */
-  animation: glitch-animation 2s infinite;
+  z-index: 1;
 }
-
-.glitch::before,
-.glitch::after {
-  content: "solaceware";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-}
-
-.glitch::before {
-  left: 2px;
-  text-shadow: -2px 0 red;
-  clip: rect(24px, 550px, 90px, 0);
-  animation: glitch-before 2s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-  left: -2px;
-  text-shadow: -2px 0 blue;
-  clip: rect(85px, 550px, 140px, 0);
-  animation: glitch-after 2s infinite linear alternate-reverse;
-}
-
-/* Add this to your existing App.css */
 
 /* Typing Effect Styles */
 .typing-wrapper {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   color: #fff;
-  z-index: 1; /* Ensure it is above the background gradient */
+  z-index: 1;
 }
 
 @keyframes caret {
@@ -188,67 +173,13 @@
   }
 }
 
-@keyframes glitch-animation {
-  0%, 100% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  10%, 30%, 50% {
-    clip: rect(85px, 550px, 140px, 0);
-  }
-  20%, 40%, 60% {
-    clip: rect(24px, 550px, 90px, 0);
-  }
-  70%, 90% {
-    clip: rect(15px, 9999px, 55px, 0);
-  }
-  80% {
-    clip: rect(30px, 550px, 70px, 0);
-  }
-}
-
-@keyframes glitch-before {
-  0%, 100% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  10%, 30%, 50% {
-    clip: rect(55px, 550px, 100px, 0);
-  }
-  20%, 40%, 60% {
-    clip: rect(10px, 550px, 50px, 0);
-  }
-  70%, 90% {
-    clip: rect(20px, 9999px, 65px, 0);
-  }
-  80% {
-    clip: rect(35px, 550px, 85px, 0);
-  }
-}
-
-@keyframes glitch-after {
-  0%, 100% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  10%, 30%, 50% {
-    clip: rect(45px, 550px, 80px, 0);
-  }
-  20%, 40%, 60% {
-    clip: rect(35px, 550px, 75px, 0);
-  }
-  70%, 90% {
-    clip: rect(25px, 9999px, 95px, 0);
-  }
-  80% {
-    clip: rect(50px, 550px, 90px, 0);
-  }
-}
-
 /* Glass-like Blur Effect */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(128, 128, 128, 0.568);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 2rem;
   margin: 2rem 0;
 }
